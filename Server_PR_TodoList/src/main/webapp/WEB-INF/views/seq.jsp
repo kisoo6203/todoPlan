@@ -25,7 +25,7 @@
 				document.location
 				.replace( "${rootPath}/todo/delete?td_seq="+${TD.td_seq})
 				
-			}
+			 }
 		}
 		
 		})
