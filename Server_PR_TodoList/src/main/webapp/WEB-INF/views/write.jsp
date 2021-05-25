@@ -7,6 +7,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+form.v1 fieldset {
+	border: 5px solid green;
+	border-radius: 20px;
+	padding: 20px;
+	margin-left: 200px;
+	margin-right: 200px;
+}
+form.v1 label, form.v1 input {
+	display: inline-block;
+	padding: 5px;
+	margin: 5px;
+}
+</style>
 <script>
 document.addEventListener("DOMContentLoaded",function(ev){
 	

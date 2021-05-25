@@ -33,11 +33,13 @@ public class TodoServiceImplV1 implements TodoService {
 			tdVO.setTd_plan(rSet.getString(DBInfo.td_plan));
 			tdVO.setTd_place(rSet.getString(DBInfo.td_place));
 			tdList.add(tdVO);
+			
+			
 
 		}
 		System.out.println(tdList.toString());
 
-		return null;
+		return tdList;
 	}
 
 	@Override

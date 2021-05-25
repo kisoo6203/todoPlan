@@ -24,8 +24,7 @@
 		})
 	})
 </script>
-<%-- 홈 꾸밀때 사용할 것
-<link href="${rootPath}/static/css/home.css?ver2021-05-24-00" rel="stylesheet"/> --%>
+<link href="${rootPath}/static/css/home.css?ver2021-05-24-00" rel="stylesheet"/>
 </head>
 <body>
 	<h1>TO DO List</h1>

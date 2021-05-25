@@ -25,6 +25,8 @@ public class HomeController extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		List<TodoVO> tdList = tdService.selectAll();
+		
+//		System.out.println("11 " + tdList.toString());
 		req.setAttribute("TDLIST",  tdList);
 		req.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(req, resp);
 		
