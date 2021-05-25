@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.callor.todo.config.DBInfo;
 import com.callor.todo.model.TodoVO;
 import com.callor.todo.service.TodoService;
 import com.callor.todo.service.impl.TodoServiceImplV1;
@@ -67,8 +68,29 @@ public class TodoPlanController extends HttpServlet {
 	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.doPost(req, resp);
+		String subPath = req.getPathInfo();
+		req.setCharacterEncoding("UTF-8");
+		String td_date = req.getParameter(DBInfo.td_date);
+		String td_time = req.getParameter(DBInfo.td_time);
+		String td_plan = req.getParameter(DBInfo.td_plan);
+		String td_place = req.getParameter(DBInfo.td_place);
+		TodoVO tdVO = new TodoVO();
+		tdVO.setTd_date(td_date);
+		tdVO.setTd_time(td_time);
+		tdVO.setTd_plan(td_plan);
+		tdVO.setTd_place(td_place);
+		
+		if(subPath.equals("/insert")) {
+			tdService.insert(tdVO);
+			resp.sendRedirect("/todo/");
+		} else if(subPath.equals("/update")) {
+			String strSeq = req.getParameter("td_seq");
+			Integer td_seq = Integer.valueOf(strSeq);
+			tdVO.setTd_seq(td_seq);
+			tdService.update(tdVO);
+			resp.sendRedirect("/todo/");
+			
+		}
 	}
 	
 	

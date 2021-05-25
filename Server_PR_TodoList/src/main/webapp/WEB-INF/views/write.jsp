@@ -72,6 +72,7 @@ document.addEventListener("DOMContentLoaded",function(ev){
 				<label>장소</label> <input name="td_place" type="place"
 					value="${TD.td_place}">
 			</div>
+			<div>
 				<label></label>
 				<button class="td_save" type="button">저장</button>
 				
